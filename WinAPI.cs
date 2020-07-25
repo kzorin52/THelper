@@ -21,7 +21,7 @@ namespace THelper
         public static extern IntPtr SetForegroundWindow(int hWnd);
 
         /// <summary>
-        ///     Выполняет клик мышкой
+        ///     Выполняет клик мышкой в текущих координатах
         /// </summary>
         public static void MouseClick()
         {
@@ -30,25 +30,25 @@ namespace THelper
         }
 
         /// <summary>
-        ///     Проверка на существование окна
+        ///     Проверка на существование открытого окна
         /// </summary>
-        /// <param name="name">Имя окна</param>
+        /// <param name="tittle">Заголовок окна</param>
         /// <returns>Да/Нет</returns>
-        public static bool IsWindowOpen(string name)
+        public static bool IsWindowOpen(string tittle)
         {
-            var hWnd = FindWindow(null, name);
+            var hWnd = FindWindow(null, tittle);
             if (hWnd > 0)
                 return true;
             return false;
         }
 
         /// <summary>
-        ///     "Поднимает" окно на передний план, или делает Focus.
+        ///     "Поднимает" окно на передний план (делает Focus).
         /// </summary>
-        /// <param name="name">Имя окна</param>
-        public static void SetForegroundWindow(string name)
+        /// <param name="tittle">Заголовок окна</param>
+        public static void SetForegroundWindow(string tittle)
         {
-            var hWnd = FindWindow(null, name);
+            var hWnd = FindWindow(null, tittle);
             SetForegroundWindow(hWnd);
         }
 

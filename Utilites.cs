@@ -1,12 +1,19 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading;
-using static Alert.Alert;
 
 namespace THelper
 {
     public class Utilites
     {
+        public enum AlertType
+        {
+            Success,
+            Error,
+            Info,
+            Warning
+        }
+
         /// <summary>
         ///     Простой рандом
         /// </summary>
@@ -25,18 +32,46 @@ namespace THelper
         /// <param name="Type">Тип сообщения</param>
         public static void AlertShow(string Message, AlertType Type)
         {
-            new Alert.Alert().ShowAlert(Message, Type);
+            switch (Type)
+            {
+                case AlertType.Error:
+                    new Alert.Alert().ShowAlert(Message, Alert.Alert.AlertType.Error);
+                    break;
+                case AlertType.Success:
+                    new Alert.Alert().ShowAlert(Message, Alert.Alert.AlertType.Success);
+                    break;
+                case AlertType.Warning:
+                    new Alert.Alert().ShowAlert(Message, Alert.Alert.AlertType.Warning);
+                    break;
+                case AlertType.Info:
+                    new Alert.Alert().ShowAlert(Message, Alert.Alert.AlertType.Info);
+                    break;
+            }
         }
 
         /// <summary>
-        ///     Вызывает popup-сообщение
+        ///     Вызывает popup-сообщение с доп. инфой по клику
         /// </summary>
         /// <param name="Message">Текст сообщения</param>
         /// <param name="Type">Тип сообщения</param>
         /// <param name="MoreText">Дополнительная информация по клику</param>
         public static void AlertShow(string Message, AlertType Type, string MoreText)
         {
-            new Alert.Alert().ShowAlert(Message, Type, MoreText);
+            switch (Type)
+            {
+                case AlertType.Error:
+                    new Alert.Alert().ShowAlert(Message, Alert.Alert.AlertType.Error, MoreText);
+                    break;
+                case AlertType.Success:
+                    new Alert.Alert().ShowAlert(Message, Alert.Alert.AlertType.Success, MoreText);
+                    break;
+                case AlertType.Warning:
+                    new Alert.Alert().ShowAlert(Message, Alert.Alert.AlertType.Warning, MoreText);
+                    break;
+                case AlertType.Info:
+                    new Alert.Alert().ShowAlert(Message, Alert.Alert.AlertType.Info, MoreText);
+                    break;
+            }
         }
 
         /// <summary>
