@@ -20,6 +20,30 @@ namespace THelper
         }
 
         /// <summary>
+        ///     Шифрует файл с помощью пароля и некоторых алгоритмов шифрования.
+        /// </summary>
+        /// <param name="PathToFile">Путь к файлу</param>
+        /// <param name="pass">Пароль</param>
+        public static void EncodeFile(string PathToFile, string pass)
+        {
+            var FileData = File.ReadAllText(PathToFile);
+            var FileDataEncoded = Encode(FileData, pass);
+            File.WriteAllText(PathToFile, FileDataEncoded);
+        }
+
+        /// <summary>
+        ///     Дешифрует файл с помощью пароля, заранее зашифрованный способом THelper.Crypto.EncryptFile.
+        /// </summary>
+        /// <param name="PathToFile">Путь к файлу</param>
+        /// <param name="pass">Пароль</param>
+        public static void DecodeFile(string PathToFile, string pass)
+        {
+            var FileData = File.ReadAllText(PathToFile);
+            var FileDataDecoded = Decode(FileData, pass);
+            File.WriteAllText(PathToFile, FileDataDecoded);
+        }
+
+        /// <summary>
         ///     Расшифровывает строку в кодировке Base64, возвращает string
         /// </summary>
         /// <param name="EncodedText">Зашифрованный текст в формате Base64</param>
