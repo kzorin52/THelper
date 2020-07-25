@@ -119,3 +119,5 @@ string filename = THelper.WinAPI.GetFileName(uri);
 
 ### Кто хочет помочь автору Идеями
 Писать [сюда](http://vk.com/temnij52)
+
+### Также есть PRO версия за 100 рублей, в ней +10 методов
