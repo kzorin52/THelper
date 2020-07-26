@@ -121,5 +121,5 @@ string filename = THelper.WinAPI.GetFileName(uri);
 Писать [сюда](http://vk.com/temnij52)
 
 ### Также есть PRO версия за 100 рублей, в ней +10 методов
-Вам [сюда](https://qiwi.com/p/79618800938)
+Вам [сюда](https://qiwi.com/p/79618800938). <br>
 В комментарии способ связи с тобой, и ник
